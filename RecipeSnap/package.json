@@ -9,10 +9,11 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "firebase": "^9.0.0",
+    "firebase": "^9.23.0",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
