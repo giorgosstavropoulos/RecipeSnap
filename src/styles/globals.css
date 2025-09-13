@@ -1,0 +1,284 @@
+.spinner svg {
+  animation: spinner-rotate 0.8s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+html, body {
+  background: #000 !important;
+  color: #eaeaea;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+.ingredients-box {
+  background: #181512;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0 1.5rem 0;
+  border: 1px solid #222;
+  max-width: 900px;
+  margin-left: 0; /* left align */
+  margin-right: 0;
+  align-self: flex-start; /* keep the ingredients box left aligned even when main is centered */
+  text-align: left;
+}
+.ingredient-pill {
+  background: #222;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.4rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.recipes-section {
+  max-width: 1400px;
+  margin: 0; /* align to left */
+}
+.recipe-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 6rem; /* increased spacing between cards */
+  align-items: start;
+}
+.recipe-card {
+  background: #181512;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 1.5rem 2rem 1.2rem 2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+  transition: box-shadow 180ms ease, transform 150ms ease, border-color 180ms ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.45);
+}
+
+.recipe-card:hover,
+.recipe-card:focus-within {
+  border-color: #ffb347; /* vivid accent on hover */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 2px 6px rgba(255,180,71,0.06);
+  transform: translateY(-6px);
+}
+
+.recipe-card:active {
+  transform: translateY(-2px);
+}
+/* Responsive: fewer columns on smaller screens */
+@media (max-width: 1100px) {
+  .recipe-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.view-recipe-link {
+  color: #ffb347;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.view-recipe-link:hover {
+  color: #fff;
+}
+body {
+  background: #000;
+  color: #eaeaea;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #181512;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #222;
+}
+.navbar-logo {
+  font-size: 1.5rem;
+  color: #ffb347;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.navbar-logo b {
+  color: #fff;
+  margin-left: 0.5rem;
+}
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  margin-left: 2rem;
+}
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.navbar-links a:hover {
+  opacity: 1;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align the page content by default */
+  justify-content: flex-start;
+  min-height: 80vh;
+  margin-top: 2rem;
+  background: transparent;
+  padding: 0 2rem; /* give some left/right padding */
+}
+
+/* Container for results to shift them right so they align with navbar/home link area */
+.results-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: 2.4rem; /* nudge right to align with navbar/home button */
+  box-sizing: border-box;
+}
+
+/* Modifier for the homepage: center content horizontally */
+.main-content.home-centered {
+  align-items: center;
+  text-align: center;
+}
+
+.main-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.main-content p {
+  color: #bdbdbd;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.upload-section {
+  background: transparent;
+  border: 2px dashed #ffb347;
+  border-radius: 12px;
+  padding: 3rem 2.5rem 2.5rem 2.5rem; /* larger padding for taller upload area */
+  width: 100%;
+  max-width: 1100px; /* keep it roomy but constrained */
+  margin: 0 auto; /* center horizontally */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upload-section h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.upload-section input[type="file"] {
+  display: none;
+}
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #888;
+  border-radius: 10px;
+  padding: 3rem 1rem; /* taller clickable area */
+  margin-bottom: 1.8rem;
+  cursor: pointer;
+  background: #181512;
+  transition: border-color 0.2s, box-shadow 0.15s;
+  width: 100%;
+  max-width: 700px; /* wider to match screenshot */
+  margin-left: auto;
+  margin-right: auto;
+}
+.upload-label:hover {
+  border-color: #ffb347;
+}
+.upload-label svg {
+  font-size: 2.5rem;
+  color: #ffb347;
+  margin-bottom: 0.5rem;
+}
+.upload-label span {
+  color: #bdbdbd;
+  font-size: 1.1rem;
+}
+
+/* Outer dotted frame that contains the upload section */
+.create-frame {
+  border: 2px dashed rgba(255,180,71,0.95); /* make the orange dotted line visible and stronger */
+  border-radius: 12px;
+  padding: 1.8rem 2rem 2.4rem 2rem; /* more breathing room */
+  max-width: 1100px; /* larger outer frame to match screenshot */
+  width: 100%;
+  margin: 0 auto 1.8rem auto;
+  box-sizing: border-box;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.create-frame-title {
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+.find-ingredients-btn {
+  background: #a05a06;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  display: block;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.find-ingredients-btn:hover {
+  background: #ffb347;
+  color: #181512;
+}
+/* Disabled button — dull text and not-allowed cursor */
+.find-ingredients-btn:disabled {
+  opacity: 0.6;
+  color: #e0c8b0;
+  background: #7a4503;
+  cursor: not-allowed;
+}
+/* Removed duplicate body/h1 rules that conflicted with dark theme */
